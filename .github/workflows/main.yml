@@ -31,6 +31,6 @@ jobs:
     - name: Creating build
       run: yarn build
     - name: Installing surge
-      run: npm install surge
+      run: npm install -g surge
     - name: Deploying on surge
       run: surge ./build http://expense-tracker-raheel.surge.sh --token ${{secrets.SECRET_TOKEN}}
