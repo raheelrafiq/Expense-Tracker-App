@@ -8,6 +8,10 @@ export const AddTransaction = () => {
     const{addTransaction} = useContext(GlobalContext);
     const onSubmit = (e) => {
         e.preventDefault();
+        if (Number.(amount) === 0) {
+            alert("Enter Amount");
+            return false;
+        }
 
         const newTransaction = {
             id: new Date().getTime(),
