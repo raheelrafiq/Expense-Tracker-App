@@ -25,31 +25,27 @@ export const AddTransaction = () => {
     }
     return(
         <div>
-            <h3>Add Transaction</h3>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit}  className="form">
                 <div>
-                <label htmlFor="description">
-                    Description
-                </label>
                 <input 
                 type="text" 
-                id="description" 
+                id="description"
+                className="input_task"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Transaction Detail"/>
+                placeholder="Enter Description here...."/>
+                
                 </div>
                 <div>
-                <label htmlFor="newAmount">
-                    Amount
-                </label>
                 <input 
                 type="number" 
                 id="newAmount"
+                className="input_task"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                placeholder="Transaction Amount"/>
+                placeholder="Enter Amount here.... ( Negative For Expense )"/>
                 </div>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add Transaction" id="submit" />
             </form>
         </div>
     )

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {GlobalContext} from '../context/globalState';
+import Delete from '../images/delete.png';
 
 export const Transaction = ({ transaction }) => {
     const sign = transaction.amount > 0 ? '+' : '-';
@@ -7,9 +8,9 @@ export const Transaction = ({ transaction }) => {
     const {delTransaction} = useContext(GlobalContext);
     return (
         <li>
+            <input onClick={()=> delTransaction(transaction.id)} type="image" src={Delete} alt="Delete" class="deletebutton" />
             {transaction.description}
-            {sign}{transaction.amount}
-            <button onClick={()=> delTransaction(transaction.id)}>X</button>
+            <span className={sign === '+' ? 'green' : 'red'}>Rs {transaction.amount}</span>
         </li>
     )
 }
