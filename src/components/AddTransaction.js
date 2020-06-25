@@ -30,7 +30,7 @@ export const AddTransaction = () => {
                 <input 
                 type="text" 
                 id="description"
-                className="input_task"
+                className="input_task" required
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Enter Description here...."/>
